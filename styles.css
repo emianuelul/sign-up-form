@@ -38,13 +38,77 @@ label {
 }
 
 .left {
+  position: relative;
   flex: 1;
   overflow: hidden;
 }
 
-.left > img {
+.left > .image {
   width: 100%;
   height: 100%;
+}
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+
+  user-select: none;
+
+  background-color: rgb(0 0 0 / 60%);
+  padding: 20px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo > p {
+  display: inline-block;
+  color: white;
+  font-size: 5rem;
+  font-family: "altehass";
+  font-weight: bold;
+  letter-spacing: 0.25rem;
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+}
+
+.logo > img {
+  width: 168px;
+  height: auto;
+}
+
+.credits {
+  position: absolute;
+  z-index: 1;
+
+  background-color: rgb(0 0 0 / 30%);
+  width: 100%;
+  text-align: center;
+
+  top: 98.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.credits > p > a {
+  color: white;
+}
+
+.credits > p > a:hover,
+.credits > p > a:focus {
+  color: yellow;
+}
+
+.credits > p {
+  font-size: 1.5rem;
+  color: white;
 }
 
 .right {
