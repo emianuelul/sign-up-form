@@ -17,10 +17,6 @@ button {
   font-family: "funnel", sans-serif;
 }
 
-input:-webkit-autofill {
-  box-shadow: 0 0 0 1000px white inset !important;
-}
-
 input {
   outline: none;
   font-size: 1rem;
@@ -172,9 +168,36 @@ input {
   flex: 0 0 calc(40%);
 }
 
+.form-item {
+  position: relative;
+}
+
+.form-item::after {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  right: 25px;
+  top: 72.5%;
+  transform: translate(0, -50%);
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.form-item:has(input:not(:placeholder-shown))::after {
+  content: "✓";
+  opacity: 1;
+  color: var(--correct);
+}
+
+.form-item:has(input:invalid)::after {
+  content: "⨯";
+  opacity: 1;
+  color: var(--error);
+}
+
 input:not(:placeholder-shown) {
   border-color: var(--correct);
-  box-shadow: 0 4px 6px rgba(100, 176, 100, 0.3);
+  box-shadow: 0 4px 5px rgba(121, 211, 121, 0.6);
 }
 
 input:invalid {
@@ -186,6 +209,20 @@ input:focus {
   border-color: blue;
   box-shadow: 0 4px 6px rgba(21, 29, 253, 0.3);
   background-color: white;
+}
+
+input:-webkit-autofill:valid {
+  box-shadow: 0 4px 5px rgba(121, 211, 121, 0.6), 0 0 0 1000px white inset !important;
+}
+
+input:-webkit-autofill:invalid {
+  border-color: var(--error) !important;
+  box-shadow: 0 4px 6px rgba(253, 21, 21, 0.3), 0 0 0 1000px white inset !important;
+}
+
+input:-webkit-autofill:focus {
+  border-color: blue !important;
+  box-shadow: 0 4px 6px rgba(21, 29, 253, 0.3), 0 0 0 1000px white inset !important;
 }
 
 .top {
