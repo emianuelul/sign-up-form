@@ -13,7 +13,7 @@
       <div class="left">
         <div class="logo">
           <img src="./logo.png" alt="company logo" />
-          <p>LOGO</p>
+          <p>ODIN</p>
         </div>
         <div class="image">
           <img class="heroimg" src="./image.jpg" alt="image of a bedroom" />
@@ -42,12 +42,12 @@
             <div class="elements">
               <div class="form-item">
                 <label for="fname">FIRST NAME</label>
-                <input type="text" id="fname" name="fname" />
+                <input type="text" id="fname" name="fname" placeholder="" />
               </div>
 
               <div class="form-item">
                 <label for="lname">LAST NAME</label>
-                <input type="text" id="lname" name="lname" />
+                <input type="text" id="lname" name="lname" placeholder="" />
               </div>
 
               <div class="form-item">
@@ -69,17 +69,34 @@
                   name="phone"
                   id="phone"
                   autocomplete="tel"
+                  placeholder=""
                 />
               </div>
 
               <div class="form-item">
                 <label for="passwd">PASSWORD</label>
-                <input type="password" id="passwd" name="passwd" required />
+                <input
+                  type="password"
+                  id="passwd"
+                  name="passwd"
+                  required
+                  placeholder=""
+                  minlength="8"
+                  maxlength="16"
+                />
               </div>
 
               <div class="form-item">
                 <label for="confirm">CONFIRM PASSWORD</label>
-                <input type="password" id="confirm" name="confirm" required />
+                <input
+                  type="password"
+                  id="confirm"
+                  name="confirm"
+                  required
+                  placeholder=""
+                  minlength="8"
+                  maxlength="16"
+                />
               </div>
             </div>
           </div>

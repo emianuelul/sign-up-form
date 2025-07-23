@@ -1,6 +1,6 @@
 :root {
-  --error: red;
-  --correct: green;
+  --error: rgb(255, 146, 146);
+  --correct: rgb(145, 255, 145);
 }
 
 body {
@@ -12,19 +12,27 @@ p,
 h1,
 h2,
 label,
-input {
+input,
+button {
   font-family: "funnel", sans-serif;
+}
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px white inset !important;
 }
 
 input {
   outline: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
 
-  width: 15vw;
+  transition: 0.2s;
+
+  height: 2rem;
 }
 
 label {
   display: block;
+  text-wrap: nowrap;
 }
 
 .maincontainer {
@@ -50,15 +58,15 @@ label {
 
 .logo {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 25%;
   transform: translate(-50%, -50%);
   width: 100%;
   z-index: 1;
 
   user-select: none;
 
-  background-color: rgb(0 0 0 / 60%);
+  background-color: rgb(0 0 0 / 40%);
   padding: 20px 40px;
 
   display: flex;
@@ -80,7 +88,7 @@ label {
 }
 
 .logo > img {
-  width: 168px;
+  width: 124px;
   height: auto;
 }
 
@@ -116,7 +124,7 @@ label {
 }
 
 input {
-  border: 1.5px solid #a1a1a1;
+  border: 1.5px solid #c8c8c8;
   border-radius: 6px;
 }
 
@@ -125,7 +133,7 @@ input {
   flex-direction: column;
   height: 100%;
 
-  gap: 64px;
+  gap: 32px;
 
   justify-content: center;
 }
@@ -150,11 +158,23 @@ input {
   flex-wrap: wrap;
   width: 70%;
 
-  gap: 2rem;
+  row-gap: 2rem;
+  column-gap: 6rem;
+}
+
+.form-item > input {
+  width: 100%;
 }
 
 .form-item {
-  margin-right: 4rem;
+  box-sizing: border-box;
+  padding-right: 1rem;
+  flex: 0 0 calc(40%);
+}
+
+input:not(:placeholder-shown) {
+  border-color: var(--correct);
+  box-shadow: 0 4px 6px rgba(100, 176, 100, 0.3);
 }
 
 input:invalid {
@@ -165,4 +185,50 @@ input:invalid {
 input:focus {
   border-color: blue;
   box-shadow: 0 4px 6px rgba(21, 29, 253, 0.3);
+  background-color: white;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+
+  gap: 30px;
+
+  padding-left: 2.5rem;
+}
+
+.bot {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 2.5rem;
+  gap: 1.5rem;
+}
+
+.bot > button {
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(255, 204, 0);
+  box-shadow: 0 4px 6px rgb(0 0 0 / 30%);
+
+  transition: 0.2s;
+
+  font-weight: bold;
+  font-size: 1.25rem;
+  padding: 1rem;
+  width: 20%;
+}
+
+.bot > button:hover {
+  background-color: rgb(229, 183, 0);
+}
+
+.bot > p > a,
+.bot > p > a:hover {
+  font-size: 1.25rem;
+  color: rgb(0, 202, 27);
+}
+
+.bot > p > a:focus {
+  color: rgb(0, 133, 18);
 }
